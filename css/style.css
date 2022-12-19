@@ -1,5 +1,4 @@
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -110,4 +109,51 @@ footer {
     display: flex;
     grid-column: 1/5;
     justify-content: center;
+}
+
+#login {
+    display: flex;
+    grid-column: 2/4;
+    background-color: rgba(217, 217, 217, 1);
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#login h1 {
+    font-size: 2.8em;
+}
+
+#login label {
+    margin-left: -50%;
+    font-weight: bold;
+}
+
+
+#email {
+    width: 200%;
+    margin-left: -50%;
+    background-color: rgba(241, 241, 241, 1);
+    border: rgba(241, 241, 241, 1);
+    border-radius: 5%;
+}
+
+#password {
+    width: 200%;
+    margin-left: -50%;
+    background-color: rgba(241, 241, 241, 1);
+    border: rgba(241, 241, 241, 1);
+    border-radius: 5%;
+}
+
+#submit {
+    background-color: rgba(123, 61, 244, 1);
+    width: 120%;
+    color: white;
+    font-weight: bold;
+    border:rgba(123, 61, 244, 1);
+    border-radius: 10%;
+    margin-left: -10%;
 }
