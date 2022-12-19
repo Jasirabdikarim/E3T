@@ -111,3 +111,29 @@ footer {
     grid-column: 1/5;
     justify-content: center;
 }
+
+.purplebar{
+	grid-column: 2/4;
+	margin-top: 10%;
+    background-color: rgba(217, 217, 217, 1);
+    border-top-style: solid;
+    border-top-width: 2em;
+    border-top-color: rgba(123, 61, 244, 1);
+}
+.talentprofile{
+	display: flex;
+	grid-column: 2/4;
+	flex-direction: row;
+	align-items: center;
+}
+.talentprofiletext{
+	display:flex;
+	flex-direction: column;
+	
+}
+.talentprofile p{
+	font-size: 12px;
+}
+.talentsprofileimg{
+	border-radius: 50%;
+}
