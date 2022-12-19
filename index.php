@@ -13,9 +13,9 @@
       <h2>E3T</h2>
       </div>
       <nav>
-        <a href="talenten/talenten.php">Talenten</a>
-        <a href="evenementen/evenementen.php">Evenementen</a>
-        <a href="inloggen/inloggen.php">Inloggen</a>
+        <a href="talenten.php">Talenten</a>
+        <a href="evenementen.php">Evenementen</a>
+        <a href="inloggen.php">Inloggen</a>
       </nav>
     </header>
     
