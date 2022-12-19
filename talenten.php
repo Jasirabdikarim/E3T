@@ -1,3 +1,15 @@
+<?php 
+ 
+
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -18,5 +30,12 @@
                     <a href="inloggen.php">Inloggen</a>
                 </nav>
             </header>
+            <main>
+              <div id="searchform">
+                <form method="GET" action="talenten.php">
+                  <input type="text" id="search"  placeholder="search...">
+                </form>
+              </div>
+            </main>
         </body>
     </html>
