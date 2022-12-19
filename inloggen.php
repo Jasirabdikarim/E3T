@@ -4,6 +4,7 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="css/normalize.css">
             <link rel="stylesheet" type="text/css" href="css/style.css">
             <title>E3T</title>
         </head>
@@ -19,5 +20,26 @@
                     <a href="inloggen.php">Inloggen</a>
                 </nav>
             </header>
+
+            <main>
+                <div id="login">
+                    <h1>Aanmelden</h1>
+                    <form action="" method="" enctype="multipart/form-data">
+                        <p><label for="email">E-mail adres</label></p>
+                        <p><input type="email" name="email" id="email"></p>
+                        <p><label for="password">Wachtwoord</label></p>
+                        <p><input type="password" name="password" id="password"></p>
+                        <p><input type="submit" name="submit" value="Aanmelden" id="submit"></p>
+                    </form>
+
+
+            </main>
+
+            <footer>
+                <h1>test</h1>
+            </footer>
+            <div id="subfooter";>
+                <p>Privacy Policy  l  Algemene voorwaarden  l  Disclaimer  l  Cookies</p>
+            </div>
         </body>
     </html>
