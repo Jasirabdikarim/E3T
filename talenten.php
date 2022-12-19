@@ -8,7 +8,6 @@
             <link rel="stylesheet" type="text/css" href="css/style.css">
             <title>E3T</title>
         </head>
-
         <body>
             <header>
                 <div id="headerContent">
