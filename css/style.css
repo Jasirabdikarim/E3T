@@ -120,40 +120,40 @@ footer {
     width: 80%;
     margin-left: 10%;
     margin-top: 10%;
+    margin-bottom: 25%;
+    height: 70%;
 }
 
 #login h1 {
     font-size: 2.8em;
 }
 
-#login label {
-    margin-left: -50%;
+#login p {
     font-weight: bold;
 }
 
 
-#email {
-    width: 200%;
-    margin-left: -50%;
+#user {
+    width: 100%;
     background-color: rgba(241, 241, 241, 1);
     border: rgba(241, 241, 241, 1);
-    border-radius: 5%;
+    height: 20%;
 }
 
 #password {
-    width: 200%;
-    margin-left: -50%;
+    width: 100%;
     background-color: rgba(241, 241, 241, 1);
     border: rgba(241, 241, 241, 1);
-    border-radius: 5%;
+    height: 20%;
 }
 
 #submit {
     background-color: rgba(123, 61, 244, 1);
-    width: 120%;
+    width: 60%;
+    height: 20%;
     color: white;
     font-weight: bold;
     border:rgba(123, 61, 244, 1);
-    border-radius: 10%;
-    margin-left: -10%;
+    margin-left: 20%;
+    margin-top: 5%;
 }

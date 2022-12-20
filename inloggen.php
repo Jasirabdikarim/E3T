@@ -80,8 +80,6 @@
                             echo "<p>{$error}</p>";
                         }
                     ?>
-
-
             </main>
 
             <footer>
