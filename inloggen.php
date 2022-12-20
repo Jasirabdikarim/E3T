@@ -25,11 +25,11 @@
                 <div id="login">
                     <h1>Aanmelden</h1>
                     <form action="" method="" enctype="multipart/form-data">
-                        <p><label for="email">E-mail adres</label></p>
-                        <p><input type="email" name="email" id="email"></p>
-                        <p><label for="password">Wachtwoord</label></p>
-                        <p><input type="password" name="password" id="password"></p>
-                        <p><input type="submit" name="submit" value="Aanmelden" id="submit"></p>
+                        <p>E-mail adres</p>
+                        <input type="email" name="email" id="email">
+                        <p>Wachtwoord</p>
+                        <input type="password" name="password" id="password">
+                        <input type="submit" name="submit" value="Aanmelden" id="submit">
                     </form>
 
 
