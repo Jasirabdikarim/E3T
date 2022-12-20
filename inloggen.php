@@ -1,3 +1,47 @@
+<?php
+    session_start();
+    require 'constants.php';
+
+    if($_SERVER['REQUEST_METHOD'] === "POST"){
+        $username = filter_input(INPUT_POST, "user", FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+        if(!$username || !$password){
+            $error = "Voer uw gebruikersnaam en wachtwoord in";
+        }
+        else{
+            try{
+                $dbHandler = new PDO ("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
+            }
+            catch (Exception $ex){
+                echo $ex;
+            }
+            if(isset($dbHandler)){
+                $stmt = $dbHandler->prepare("SELECT * FROM `Login` WHERE Username = :username;");
+                $stmt->bindParam("username", $username, PDO::PARAM_STR);
+                $stmt->bindColumn("Password", $hashed, PDO::PARAM_STR);
+                $stmt->bindColumn("Role", $role, PDO::PARAM_STR);
+                $stmt->bindColumn("LoginID", $id, PDO::PARAM_STR);
+                $stmt->execute();
+                $stmt->fetch(PDO::FETCH_ASSOC);
+                if(!isset($hashed)){
+                    $error = "Onjuiste gebruikersnaam en/of wachtwoord1";
+                }
+                else{
+                    if(password_verify($password, $hashed)){
+                        $_SESSION['Username'] = $username;
+                        $_SESSION['LoginID'] = $id;
+                        $_SESSION['Role'] = $role;
+                        // To-do: add action after login
+                    }
+                    else{
+                        $error = "Onjuiste gebruikersnaam en/of wachtwoord2";
+                    }
+                }
+            }
+        }
+    }
+    $dbHandler = null;
+?>
 <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -24,13 +68,18 @@
             <main>
                 <div id="login">
                     <h1>Aanmelden</h1>
-                    <form action="" method="" enctype="multipart/form-data">
-                        <p><label for="email">E-mail adres</label></p>
-                        <p><input type="email" name="email" id="email"></p>
+                    <form action="inloggen.php" method="POST" enctype="multipart/form-data">
+                        <p><label for="user">Gebruikersnaam</label></p>
+                        <p><input type="text" name="user" id="user" required></p>
                         <p><label for="password">Wachtwoord</label></p>
-                        <p><input type="password" name="password" id="password"></p>
+                        <p><input type="password" name="password" id="password" required></p>
                         <p><input type="submit" name="submit" value="Aanmelden" id="submit"></p>
                     </form>
+                    <?php
+                        if(isset($error)){
+                            echo "<p>{$error}</p>";
+                        }
+                    ?>
 
 
             </main>
@@ -38,7 +87,7 @@
             <footer>
                 <h1>test</h1>
             </footer>
-            <div id="subfooter";>
+            <div id="subfooter">
                 <p>Privacy Policy  l  Algemene voorwaarden  l  Disclaimer  l  Cookies</p>
             </div>
         </body>
