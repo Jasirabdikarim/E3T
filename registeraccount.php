@@ -73,10 +73,12 @@
                                                 $error = "Er is een verbindings fout met de database";
                                             }
                                             if(!isset($error)){
-                                                // To-do:
-                                                // - Check if role is talent or admin
-                                                //   - If admin -> Succes message
-                                                //   - If talent -> create Talentprofile
+                                                if($role == "talent"){
+                                                    $succes = "<a href='createprofile.php'>Account aangemaakt, klik hier om het talentenprofiel aan te maken</a>";
+                                                }
+                                                if($role == "admin"){
+                                                    $succes = "Account aangemaakt";
+                                                }
                                             }
                                         }
                                         else{
@@ -116,6 +118,9 @@
                         <?php
                         if(isset($error)){
                             echo "<p>{$error}</p>";
+                        }
+                        if(isset($succes)){
+                            echo "<p>{$succes}</p>";
                         }
                     }
                     $dbHandler = null;
