@@ -20,5 +20,12 @@
                     <a href="inloggen.php">Inloggen</a>
                 </nav>
             </header>
+            <div id="Evenementen";> 
+                <h1> Evenementen </h2> 
+            </div> 
+
+            <div id="subfooter";>
+                <p>Privacy Policy  l  Algemene voorwaarden  l  Disclaimer  l  Cookies</p>
+             </div>
         </body>
     </html>

@@ -171,3 +171,13 @@ footer {
     margin: auto;
     padding: 0;
 }
+
+#Evenementen{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size:5em;
+    grid-column: 1/5;
+}
