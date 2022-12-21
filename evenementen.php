@@ -23,6 +23,7 @@
             <div id="Evenementen";> 
                 <h1> Evenementen </h2> 
             </div> 
+            <div class ="purplebar"></div>
 
             <div id="subfooter";>
                 <p>Privacy Policy  l  Algemene voorwaarden  l  Disclaimer  l  Cookies</p>
