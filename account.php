@@ -26,14 +26,16 @@
                 </nav>
             </header>
             <main>
-                <h1>Account</h1>
-                <ul>
-                    <?php
-                        if($_SESSION['Role'] == "admin"){
-                            echo "<li><a href='#'>Account aanmaken</a></li>";
-                        }
-                    ?>
-                </ul>
+                <div id="accountMenu">
+                    <h1>Account</h1>
+                    <ul>
+                        <?php
+                            if($_SESSION['Role'] == "admin"){
+                                echo "<li><a href='#'>Account aanmaken</a></li>";
+                            }
+                        ?>
+                    </ul>
+                </div>
             </main>
         </body>
     </html>

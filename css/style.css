@@ -157,3 +157,17 @@ footer {
     margin-left: 20%;
     margin-top: 5%;
 }
+
+#accountMenu{
+    grid-column: 2/4;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#accountMenu ul{
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+}
