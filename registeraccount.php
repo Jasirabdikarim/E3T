@@ -31,25 +31,35 @@ else{
     </nav>
 </header>
 <main>
-    <h1>Register</h1>
-    <?php
-        if($_SESSION['Role'] == "admin"){
-            ?>
-                <form action="registeraccount.php" method="POST">
-                    <label for="username">Username: </label>
-                    <input type="text" name="username">
-                    <label for="password">Password: </label>
-                    <input type="password" name="password">
-                    <label for="role">Role: </label>
-                    <select name="role">
-                        <option>Talent</option>
-                        <option>Admin</option>
-                    </select>
-                    <input type="submit" value="Registreer">
-                </form>
-            <?php
-        }
-    ?>
+    <div id="registrationForm">
+        <h1>Register</h1>
+        <?php
+            if($_SESSION['Role'] == "admin"){
+                ?>
+                    <form action="registeraccount.php" method="POST">
+                        <div class="formFieldSpacing">
+                            <label for="username">Username: </label>
+                            <input class="inputField" type="text" name="username">
+                        </div>
+                        <div class="formFieldSpacing">
+                            <label for="password">Password: </label>
+                            <input class="inputField" type="password" name="password">
+                        </div>
+                        <div class="formFieldSpacing">
+                            <label for="role">Role: </label>
+                            <select class="inputField" name="role">
+                                <option>Talent</option>
+                                <option>Admin</option>
+                            </select>
+                        </div>
+                        <div class="formFieldSpacing">
+                            <input class="submit" type="submit" value="Registreer">
+                        </div>
+                    </form>
+                <?php
+            }
+        ?>
+    </div>
 </main>
 </body>
 </html>
