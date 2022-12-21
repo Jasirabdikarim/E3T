@@ -120,40 +120,112 @@ footer {
     width: 80%;
     margin-left: 10%;
     margin-top: 10%;
+    margin-bottom: 25%;
+    height: 70%;
 }
 
 #login h1 {
     font-size: 2.8em;
 }
 
-#login label {
-    margin-left: -50%;
+#login p {
     font-weight: bold;
 }
 
 
-#email {
-    width: 200%;
-    margin-left: -50%;
+#user {
+    width: 100%;
     background-color: rgba(241, 241, 241, 1);
     border: rgba(241, 241, 241, 1);
-    border-radius: 5%;
+    height: 20%;
 }
 
 #password {
-    width: 200%;
-    margin-left: -50%;
+    width: 100%;
     background-color: rgba(241, 241, 241, 1);
     border: rgba(241, 241, 241, 1);
-    border-radius: 5%;
+    height: 20%;
 }
 
-#submit {
+.submit {
     background-color: rgba(123, 61, 244, 1);
-    width: 120%;
+    width: 60%;
+    height: 20%;
     color: white;
     font-weight: bold;
     border:rgba(123, 61, 244, 1);
-    border-radius: 10%;
-    margin-left: -10%;
+    margin-left: 20%;
+    margin-top: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#accountMenu{
+    grid-column: 2/4;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#accountMenu ul{
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+}
+
+#registrationForm{
+    grid-column: 2/4;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#registrationForm h1{
+    text-align: center;
+}
+
+.inputField{
+    width: 100%;
+}
+
+.formFieldSpacing{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    color: red;
+    text-align: center;
+}
+
+.succes{
+    color: rgb(110, 187, 110);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.succes a{
+    color: rgb(110, 187, 110);
+    text-align: center;
+}
+
+#manageLayout{
+    grid-column: 2/4;
+}
+
+#manageLayout h1{
+    text-align: center;
+}
+
+#manageTable{
+    width: 100%;
+    text-align: center;
+}
+
+.tablePadding{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
 }
