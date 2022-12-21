@@ -60,7 +60,7 @@
                                         $error = "Er is een verbindings fout met de database";
                                     }
                                     if(!isset($error)){
-                                        if($stmt->rowCount() == 0) {
+                                        if($stmt->rowCount() == 0){
                                             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
                                             $stmt = $dbHandler->prepare("INSERT INTO `Login` (Username, Password, Role) VALUES (:username, :hashed_password, :role)");
                                             $stmt->bindParam("username", $username, PDO::PARAM_STR);
