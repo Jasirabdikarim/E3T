@@ -70,6 +70,9 @@
                                 }
                             }
                         }
+                        if(isset($error)){
+                            echo "<p>$error</p>";
+                        }
                         $dbHandler = null;
                     ?>
                 </table>
