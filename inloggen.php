@@ -2,6 +2,10 @@
     session_start();
     require 'constants.php';
 
+    if(isset($_SESSION['Username'])){
+        header("Location: account.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         $username = filter_input(INPUT_POST, "user", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -24,17 +28,17 @@
                 $stmt->execute();
                 $stmt->fetch(PDO::FETCH_ASSOC);
                 if(!isset($hashed)){
-                    $error = "Onjuiste gebruikersnaam en/of wachtwoord1";
+                    $error = "Onjuiste gebruikersnaam en/of wachtwoord";
                 }
                 else{
                     if(password_verify($password, $hashed)){
                         $_SESSION['Username'] = $username;
                         $_SESSION['LoginID'] = $id;
                         $_SESSION['Role'] = $role;
-                        // To-do: add action after login
+                        header("Location: account.php");
                     }
                     else{
-                        $error = "Onjuiste gebruikersnaam en/of wachtwoord2";
+                        $error = "Onjuiste gebruikersnaam en/of wachtwoord";
                     }
                 }
             }
