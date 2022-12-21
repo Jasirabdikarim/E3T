@@ -1,0 +1,55 @@
+<?php
+session_start();
+if(!isset($_SESSION['Role'])){
+    header("Location: inloggen.php");
+}
+else{
+    if($_SESSION['Role'] != "admin"){
+        header("Location: inloggen.php");
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>E3T</title>
+</head>
+<body>
+<header>
+    <div id="headerContent">
+        <h2>E3T</h2>
+    </div>
+    <nav>
+        <a href="talenten.php">Talenten</a>
+        <a href="evenementen.php">Evenementen</a>
+        <a href="inloggen.php">Inloggen</a>
+    </nav>
+</header>
+<main>
+    <h1>Register</h1>
+    <?php
+        if($_SESSION['Role'] == "admin"){
+            ?>
+                <form action="registeraccount.php" method="POST">
+                    <label for="username">Username: </label>
+                    <input type="text" name="username">
+                    <label for="password">Password: </label>
+                    <input type="password" name="password">
+                    <label for="role">Role: </label>
+                    <select name="role">
+                        <option>Talent</option>
+                        <option>Admin</option>
+                    </select>
+                    <input type="submit" value="Registreer">
+                </form>
+            <?php
+        }
+    ?>
+</main>
+</body>
+</html>
