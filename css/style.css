@@ -211,3 +211,21 @@ footer {
     color: rgb(110, 187, 110);
     text-align: center;
 }
+
+#manageLayout{
+    grid-column: 2/4;
+}
+
+#manageLayout h1{
+    text-align: center;
+}
+
+#manageTable{
+    width: 100%;
+    text-align: center;
+}
+
+.tablePadding{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}

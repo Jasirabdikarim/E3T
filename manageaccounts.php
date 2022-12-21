@@ -32,46 +32,48 @@
             </nav>
         </header>
         <main>
-            <h1>Accounts</h1>
-            <table>
-                <tr>
-                    <th>Username</th>
-                    <th>Role</th>
-                    <th>Bewerk</th>
-                    <th>Verwijder</th>
-                </tr>
-                <?php
-                    try{
-                        $dbHandler = new PDO("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
-                    }
-                    catch (Exception $ex){
-                        $error = "Er is een verbindings fout met de database";
-                    }
-                    if(isset($dbHandler)){
-                        $stmt = $dbHandler->prepare("SELECT * FROM `Login`");
-                        $stmt->bindColumn("LoginID", $id);
-                        $stmt->bindColumn("Username", $username);
-                        $stmt->bindColumn("Role", $role);
-                        try {
-                            $stmt->execute();
+            <div id="manageLayout">
+                <h1>Accounts</h1>
+                <table id="manageTable">
+                    <tr>
+                        <th class='tablePadding'>Username</th>
+                        <th class='tablePadding'>Role</th>
+                        <th class='tablePadding'>Bewerk</th>
+                        <th class='tablePadding'>Verwijder</th>
+                    </tr>
+                    <?php
+                        try{
+                            $dbHandler = new PDO("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
                         }
-                        catch(Exception $ex){
+                        catch (Exception $ex){
                             $error = "Er is een verbindings fout met de database";
                         }
-                        if(!isset($error)){
-                            while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                echo "<tr>
-                                        <td>$username</td>
-                                        <td>$role</td>
-                                        <td><a href='editaccount.php?id={$id}'>Bewerk</a></td>
-                                        <td><a href='deleteaccount.php?id={$id}'>Verwijder</a></td>
-                                    </tr>";
+                        if(isset($dbHandler)){
+                            $stmt = $dbHandler->prepare("SELECT * FROM `Login`");
+                            $stmt->bindColumn("LoginID", $id);
+                            $stmt->bindColumn("Username", $username);
+                            $stmt->bindColumn("Role", $role);
+                            try {
+                                $stmt->execute();
+                            }
+                            catch(Exception $ex){
+                                $error = "Er is een verbindings fout met de database";
+                            }
+                            if(!isset($error)){
+                                while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                    echo "<tr>
+                                            <td class='tablePadding'>$username</td>
+                                            <td class='tablePadding'>$role</td>
+                                            <td class='tablePadding'><a href='editaccount.php?id={$id}'>Bewerk</a></td>
+                                            <td class='tablePadding'><a href='deleteaccount.php?id={$id}'>Verwijder</a></td>
+                                        </tr>";
+                                }
                             }
                         }
-                    }
-                    $dbHandler = null;
-                ?>
-            </table>
+                        $dbHandler = null;
+                    ?>
+                </table>
+            </div>
         </main>
     </body>
 </html>
