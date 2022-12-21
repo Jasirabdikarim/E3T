@@ -120,7 +120,7 @@
                             echo "<p class='error'>{$error}</p>";
                         }
                         if(isset($succes)){
-                            echo "<p>{$succes}</p>";
+                            echo "<p class='succes'>{$succes}</p>";
                         }
                     }
                     $dbHandler = null;

@@ -200,3 +200,14 @@ footer {
     color: red;
     text-align: center;
 }
+
+.succes{
+    color: rgb(110, 187, 110);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.succes a{
+    color: rgb(110, 187, 110);
+    text-align: center;
+}
