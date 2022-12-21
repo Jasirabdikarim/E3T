@@ -69,6 +69,7 @@
                             }
                         }
                     }
+                    $dbHandler = null;
                 ?>
             </table>
         </main>
