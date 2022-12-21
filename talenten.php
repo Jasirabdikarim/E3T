@@ -1,4 +1,5 @@
 <?php
+require 'constants.php';
 try{
     $dbHandler = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpassword);
     $dbHandler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
