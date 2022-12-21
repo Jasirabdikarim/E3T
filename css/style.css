@@ -178,7 +178,7 @@ footer {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-size:5em;
+    font-size:4em;
     grid-column: 1/5;
     background-color: white;
 }
