@@ -181,3 +181,10 @@ footer {
     font-size:5em;
     grid-column: 1/5;
 }
+
+.purplebar{
+	grid-column: 2/4;
+    border-top-style: solid;
+    border-top-width: 2em;
+    border-top-color: rgba(123, 61, 244, 1);
+}
