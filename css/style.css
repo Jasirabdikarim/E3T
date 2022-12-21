@@ -180,11 +180,60 @@ footer {
     text-align: center;
     font-size:5em;
     grid-column: 1/5;
+    background-color: white;
 }
 
-.purplebar{
-	grid-column: 2/4;
+.purplebarwidth{
+	grid-column: 1/5;
     border-top-style: solid;
     border-top-width: 2em;
     border-top-color: rgba(123, 61, 244, 1);
+}
+
+#aankomende{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size:1em;
+    grid-column: 1/5;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+#searchform{
+    display: grid;
+    grid-column: 2/4;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+#search{
+    border: 1px solid grey;
+    padding: 2%;
+    margin-top: 10%;
+    align-items: center;
+    width: 96%;
+}
+
+#background{ 
+    background-color: rgba(217, 217, 217, 1);
+    grid-column: 1/5;
+
+} 
+
+#agenda2 table {
+    background-color: white;
+    width: 98%;
+    margin-left: 1%;
+}
+
+#agenda2 th {
+    border: 1px solid black;
+  }
+
+  #agenda2 {
+    grid-column: 1/5;
+    background-color: rgba(217, 217, 217, 1);
+   
 }
