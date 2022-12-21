@@ -229,3 +229,37 @@ footer {
     padding-top: 0.5%;
     padding-bottom: 0.5%;
 }
+
+/* talenten */
+#searchform{
+  display: grid;
+  grid-column: 2/4;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+#search{
+  border: 1px solid grey;
+  padding: 2%;
+  margin-top: 10%;
+  align-items: center;
+  width: 96%;
+}
+#result{
+  grid-column: 2/4;
+  text-align: center;
+}
+
+.purplebar{
+	grid-column: 2/4;
+    border-top-style: solid;
+    border-top-width: 2em;
+    border-top-color: rgba(123, 61, 244, 1);
+}
+
+.talentprofile{
+	display: flex;
+	grid-column: 2/4;
+	flex-direction: row;
+	align-items: center;
+}
