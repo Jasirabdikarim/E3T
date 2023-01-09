@@ -74,7 +74,7 @@
                                             }
                                             if(!isset($error)){
                                                 if($role == "talent"){
-                                                    $succes = "<a href='createprofile.php'>Account aangemaakt, klik hier om het talentenprofiel aan te maken</a>";
+                                                    $succes = "<a href='registertalent.php'>Account aangemaakt, klik hier om het talentenprofiel aan te maken</a>";
                                                 }
                                                 if($role == "admin"){
                                                     $succes = "Account aangemaakt";
