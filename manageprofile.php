@@ -36,10 +36,11 @@
                 <h1>Profielen</h1>
                 <table id="manageTable">
                     <tr>
-                        <th class='tablePadding'>Username</th>
-                        <th class='tablePadding'>Role</th>
-                        <th class='tablePadding'>Bewerk</th>
-                        <th class='tablePadding'>Verwijder</th>
+                        <th class='tablePadding'>Naam</th>
+                        <th class='tablePadding'>Land</th>
+                        <th class='tablePadding'>Telefoon</th>
+                        <th class='tablePadding'>Email</th>
+                        <th class='tablePadding'>Beschrijving</th>
                     </tr>
                     <?php
                     try{
