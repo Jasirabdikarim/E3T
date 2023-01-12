@@ -70,6 +70,7 @@
                             echo "<p>$error</p>";
                         }
                         else{
+                            echo "<img src='img/profilepic.png'alt='profielfoto'>";
                             echo "<ul><li>Email: $email</li><li>Telefoon: $phone</li><li>Land: $country</li></ul>";
                             echo "<p>$description</p>";
                         }
