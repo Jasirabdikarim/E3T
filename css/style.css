@@ -132,7 +132,6 @@ footer {
     font-weight: bold;
 }
 
-
 #user {
     width: 100%;
     background-color: rgba(241, 241, 241, 1);
@@ -172,7 +171,7 @@ footer {
     padding: 0;
 }
 
-#Evenementen{ 
+#eventstitle{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,29 +182,26 @@ footer {
     background-color: white;
 }
 
-.purplebarwidth{
+#purplebarwidth{
 	grid-column: 1/5;
     border-top-style: solid;
     border-top-width: 2em;
     border-top-color: rgba(123, 61, 244, 1);
 }
 
-#aankomende{ 
+#upcoming{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     font-size:1em;
     grid-column: 1/5;
     background-color: rgba(217, 217, 217, 1);
+    margin-bottom: 2%;
 }
 
-#searchform{
-    display: grid;
-    grid-column: 2/4;
-    align-items: center;
-    margin-bottom: 10%;
+#upcoming > h1{
+    margin-bottom: 0;
 }
 
 #search{
@@ -219,21 +215,78 @@ footer {
 #background{ 
     background-color: rgba(217, 217, 217, 1);
     grid-column: 1/5;
-
 } 
 
-#agenda2 table {
-    background-color: white;
-    width: 98%;
-    margin-left: 1%;
+#searchform {
+    padding: 2%;
+    align-items: center;
+    width: 75%;
+    margin: 0;
 }
 
-#agenda2 th {
-    border: 1px solid black;
-  }
+#agenda2 table {
+    background: white;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 5% 2% 5%;
+    table-layout: fixed;
+}
 
-  #agenda2 {
+#agenda2 td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#addcontainer, #linkcontainer {
+    align-items: center;
+    text-align: center;
+    font-size:1em;
     grid-column: 1/5;
     background-color: rgba(217, 217, 217, 1);
-   
 }
+
+#overrulebox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#box td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#box table {
+    background: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 5% 2% 5%;
+}
+
+#overrulebox [type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#overrulebox input[type=submit] {
+    width: 100%;
+    background-color: rgba(123, 61, 244, 1);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
