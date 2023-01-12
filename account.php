@@ -34,6 +34,7 @@
                                 echo "<li><a href='registeraccount.php'>Account aanmaken</a></li>";
                                 echo "<li><a href='manageaccounts.php'>Accounts beheren</a></li>";
                                 echo "<li><a href='registertalent.php'>Talentprofiel aanmaken</a></li>";
+                                echo "<li><a href='manageprofile.php'>Talentprofielen beheren</a></li>";
                             }
                         ?>
                     </ul>
