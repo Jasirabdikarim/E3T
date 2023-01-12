@@ -15,6 +15,7 @@ try{
         $stmt->bindParam("search", $search, PDO::PARAM_STR);
         $stmt->bindcolumn("Name", $name);
         $stmt->bindcolumn("Description", $description);
+        $stmt->bindcolumn("TalentID", $talent);
         $stmt -> execute();
       } catch(Exception $ex){
          echo $ex;
@@ -26,6 +27,7 @@ try{
         $stmt = $dbHandler->prepare("SELECT * FROM Talentprofile;");
         $stmt->bindcolumn("Name", $name);
         $stmt->bindcolumn("Description", $description);
+        $stmt->bindcolumn("TalentID", $talent);
         $stmt -> execute();
       } catch(Exception $ex){
           echo $ex;
@@ -87,6 +89,7 @@ try{
                   <div class ='talentprofiletext'>
                     <h2>$name</h2>
                     <p>$description</p>
+                    <a href='profile.php?id=$talent'>Klik hier</a>
 							    </div>
 					    </div>";
 					}
