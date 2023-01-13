@@ -118,8 +118,8 @@
                         if(isset($succes)){
                             echo "<p class='succes'>{$succes}</p>";
                         }
-						$dbHandler = null;
 					}
+                    $dbHandler = null;
                 ?>
             </div>
         </main>
