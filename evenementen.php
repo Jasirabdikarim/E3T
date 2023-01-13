@@ -71,9 +71,9 @@ $dbHandler = null;
     <div id="purplebarwidth"></div>
     <div id="upcoming">
         <h1> Aankomende Evenementen </h1>
-        <div id="searchform">
+        <div id="eventsearch">
             <form method="GET" action="evenementen.php">
-                <input type="text" name="search" id="searchform" placeholder="search...">
+                <input type="text" name="search" id="eventsearch" placeholder="search...">
             </form>
         </div>
         <div id="agenda2">
