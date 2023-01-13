@@ -50,7 +50,7 @@
                         $error = "Er is een verbindings fout met de database";
                     }
                     if(isset($dbHandler)){
-                        $stmt = $dbHandler->prepare("UPDATE `Talentprofile` SET Name = :Name, Country = :Country, Phone = :Phone, Email = :Email, Description = :Description WHERE TalentID= :id;");
+                        $stmt = $dbHandler->prepare("UPDATE `Talentprofile` SET TalentName = :Name, Country = :Country, Phone = :Phone, Email = :Email, Description = :Description WHERE TalentID= :id;");
                         $stmt->bindParam('id', $id, PDO::PARAM_STR);
                         $stmt->bindParam('Name', $name, PDO::PARAM_STR);
                         $stmt->bindParam('Country', $country, PDO::PARAM_STR);
@@ -101,7 +101,7 @@
 
                         $stmt = $dbHandler->prepare("SELECT * FROM `Talentprofile` WHERE TalentID= :id;");
                         $stmt->bindParam('id', $id, PDO::PARAM_STR);
-                        $stmt->bindColumn("Name", $name, PDO::PARAM_STR);
+                        $stmt->bindColumn("TalentName", $name, PDO::PARAM_STR);
                         $stmt->bindColumn("Country", $country, PDO::PARAM_STR);
                         $stmt->bindColumn("Phone", $phone, PDO::PARAM_STR);
                         $stmt->bindColumn("Email", $email, PDO::PARAM_STR);

@@ -91,7 +91,7 @@
                             }
                             $stmt = $dbHandler->prepare("SELECT * FROM `Talentprofile` WHERE TalentID= :id;");
                             $stmt->bindParam('id', $id, PDO::PARAM_STR);
-                            $stmt->bindColumn("Name", $name, PDO::PARAM_STR);
+                            $stmt->bindColumn("TalentName", $name, PDO::PARAM_STR);
                             $stmt->execute();
                             echo "<form action='deleteprofile.php' method='POST' id='editform'>";
                             while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
