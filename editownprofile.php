@@ -73,8 +73,6 @@ else{
                 }
 
                 else{
-                    // -------
-
                     $loginID = $_SESSION['LoginID'];
                     try {
                         $dbHandler = new PDO("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
@@ -83,7 +81,6 @@ else{
                         $error = "Er is een verbindings fout met de database";
                     }
                     if(!isset($error)){
-                        //
                         $stmt = $dbHandler->prepare("SELECT TalentID FROM `Login` WHERE LoginID = :id");
                         $stmt->bindParam("id", $loginID, PDO::PARAM_INT);
                         $stmt->bindColumn("TalentID", $id, PDO::PARAM_INT);
@@ -96,10 +93,7 @@ else{
                         if(!isset($error)){
                             $stmt->fetch(PDO::FETCH_ASSOC);
                         }
-                        //
                     }
-
-                    // -------
                     if(!$id){
                         echo '<a href="manageprofile.php">Ga terug naar het overzicht en probeer het opnieuw.</a>';
                     }
