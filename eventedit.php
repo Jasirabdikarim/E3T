@@ -7,19 +7,29 @@ require 'constants.php';
 try {
     $dbHandler = new PDO ("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
 } catch (Exception $ex) {
-    echo $ex;
+    $error = "Er is een fout bij het maken van verbinding met de database";
 }
 if (isset($dbHandler)) {
-    $stmt = $dbHandler->prepare("SELECT * FROM Customer;");
     try {
+        $stmt = $dbHandler->prepare("SELECT CustomerID, Event.EventID, EventName, Date, GROUP_CONCAT(TalentName SEPARATOR ', ') as TalentName, Location, Price, Event.Description 
+                                                FROM Event
+                                                JOIN eventOccasion ON Event.EventID = eventOccasion.EventID
+                                                JOIN Talentprofile ON eventOccasion.TalentID = Talentprofile.TalentID
+                                                WHERE Event.EventID = :EventID;");
+        $stmt->bindParam("EventID", $_GET['id'], PDO::PARAM_STR);
         $stmt->execute();
+    } catch (Exception $ex) {
+        echo $ex;
+    }
+    $customerid = $dbHandler->prepare("SELECT * FROM Customer;");
+    try {
+        $customerid->execute();
     } catch (Exception $ex) {
         echo $ex;
     }
     $err = [];
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $statement = $dbHandler->prepare("INSERT INTO Event (CustomerID, EventName, Location, Price, Date, Description) 
-                                                VALUES (:CustomerID, :EventName, :Location, :Price, :Date, :Description);");
+        $statement = $dbHandler->prepare("UPDATE Event SET CustomerID = :CustomerID, EventName = :EventName, Location = :Location, Price = :Price, Date = :Date, Description = :Description;");
 
         if (!$CustomerID = filter_input(INPUT_POST, 'CustomerID', FILTER_VALIDATE_INT)) {
             $err[] = "Vergeten het klant ID toe te voegen";
@@ -53,11 +63,10 @@ if (isset($dbHandler)) {
             }
         }
         if (count($err) == 0) {
-            $success = "Evenement is succesvol toegevoegd";
+            $success = "Evenement is succesvol bewerkt";
         }
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,43 +94,47 @@ if (isset($dbHandler)) {
         <h1> Evenementen </h1>
     </div>
     <div id="purplebarwidth"></div>
-
     <div id="addcontainer">
-        <h1>Evenement Toevoegen </h1>
+        <h1>Evenement Bewerken </h1>
         <div id="overrulebox">
             <form name="eventadd" action="<?= filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_SPECIAL_CHARS); ?>"
                   method="POST">
-                <div>
-                    <label for="EventName">Naam evenement</label>
-                    <input type="text" name="EventName">
-                </div>
-                <div>
-                    <label for="Location">Locatie</label>
-                    <input type="text" name="Location">
-                </div>
-                <div>
-                    <label for="Price">Prijs</label>
-                    <input type="text" name="Price">
-                </div>
-                <div>
-                    <label for="Date">Datum</label>
-                    <input type="date" name="Date" required>
-                </div>
-                <div>
-                    <label for="CustomerID">Klant ID</label>
-                    <input type="text" name="CustomerID">
-                </div>
-                <div>
-                    <label for="Description">Beschrijving</label>
-                    <textarea name="Description"></textarea>
-                </div>
+                <?php
+                while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "
+                    <div>
+                        <label for='EventName'>Naam evenement</label>
+                        <input type='text' name='EventName' placeholder='$result[EventName]'>
+                    </div>
+                    <div>
+                        <label for='Location'>Locatie</label>
+                        <input type='text' name='Location' placeholder='$result[Location]'>
+                    </div>
+                    <div>
+                        <label for='Price'>Prijs</label>
+                        <input type='text' name='Price' placeholder='$result[Price]'>
+                    </div>
+                    <div>
+                        <label for='Date'>Datum</label>
+                        <input type='date' name='Date' required>
+                    </div>
+                    <div>
+                        <label for='CustomerID'>Klant ID</label>
+                        <input type='text' name='CustomerID' placeholder='$result[CustomerID]'>
+                    </div>  
+                    <div>
+                        <label for='Description'>Beschrijving</label>
+                        <textarea name='Description' placeholder='$result[Description]'></textarea>
+                    </div>
+                    ";
+                }
+                ?>
                 <input type="submit" value="Verzenden">
             </form>
             <?php
             if (isset($success)) {
                 echo "<p>$success</p>";
             }
-
             if (count($err) > 0) {
                 echo "<ul>";
                 foreach ($err as $error) {
@@ -137,7 +150,7 @@ if (isset($dbHandler)) {
                         <th>Klant naam</th>
                     </tr>
                     <?php
-                    while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    while ($result = $customerid->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
                         echo "<td>$result[CustomerID]</td>";
                         echo "<td>$result[Name]</td>";
