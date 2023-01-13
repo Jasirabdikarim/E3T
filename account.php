@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require 'constants.php';
     if(!isset($_SESSION['Username'])){
         header("Location: inloggen.php");
     }
@@ -33,6 +34,34 @@
                             if($_SESSION['Role'] == "admin"){
                                 echo "<li><a href='registeraccount.php'>Account aanmaken</a></li>";
                                 echo "<li><a href='manageaccounts.php'>Accounts beheren</a></li>";
+                                echo "<li><a href='registertalent.php'>Talentprofiel aanmaken</a></li>";
+                                echo "<li><a href='manageprofile.php'>Talentprofielen beheren</a></li>";
+                            }
+                            if($_SESSION['Role'] == "talent"){
+                                try{
+                                    $dbHandler = new PDO ("mysql:host={$dbhost};dbname={$dbname};charset=utf8;", "{$dbuser}", "{$dbpassword}");
+                                }
+                                catch (Exception $ex){
+                                    $error = "Er is een verbindings fout met de database";
+                                }
+                                if(!isset($error)) {
+                                    $stmt = $dbHandler->prepare("SELECT TalentID FROM `Login` WHERE LoginID = :id");
+                                    $stmt->bindParam("id", $_SESSION['LoginID'], PDO::PARAM_INT);
+                                    $stmt->bindColumn("TalentID", $talentID, PDO::PARAM_INT);
+                                    try{
+                                        $stmt->execute();
+                                    }
+                                    catch(Exception $ex){
+                                        $error = "Er is een verbindings fout met de database";
+                                    }
+                                    if(!isset($error)){
+                                        $stmt->fetch(PDO::FETCH_ASSOC);
+                                        if(isset($talentID)){
+                                            echo "<li><a href='profile.php?id=$talentID'>Eigen profiel</a></li>";
+                                            echo "<li><a href='editownprofile.php'>Profiel bewerken</a></li>";
+                                        }
+                                    }
+                                }
                             }
                         ?>
                     </ul>
