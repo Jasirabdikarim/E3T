@@ -273,3 +273,12 @@ footer {
 
 
 }
+
+#editform{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+#editform input{
+	margin: 2%;
+}
