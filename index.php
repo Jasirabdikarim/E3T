@@ -29,6 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/temp.css">
     <title>E3T</title>
   </head>
   <body>
@@ -59,7 +60,9 @@
                 echo "<th>Datum</th>";
               echo "</tr>";
               $rows = $stmt->fetchAll();
+              $count = 5;
                 foreach ($rows as $row):
+                  if ($count > 0):
                     ?>
                     <tr>
                       <td><?php echo $row['Name'];?></td>
@@ -67,6 +70,8 @@
                       <td><?php echo $row['Date'];?></td>
                     </tr>
                   <?php
+                    $count--;
+                  endif;
                 endforeach;
               echo "</table>";
             } else {
