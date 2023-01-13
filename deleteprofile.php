@@ -1,14 +1,14 @@
 <?php
-session_start();
-require 'constants.php';
-if(!isset($_SESSION['Role'])){
-    header("Location: inloggen.php");
-}
-else{
-    if($_SESSION['Role'] != "admin"){
+    session_start();
+    require 'constants.php';
+    if(!isset($_SESSION['Role'])){
         header("Location: inloggen.php");
     }
-}
+    else{
+        if($_SESSION['Role'] != "admin"){
+            header("Location: inloggen.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
