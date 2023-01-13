@@ -25,7 +25,7 @@ try{
     if(isset($dbHandler)){
       try{
         $stmt = $dbHandler->prepare("SELECT * FROM Talentprofile;");
-        $stmt->bindcolumn("Name", $name);
+        $stmt->bindcolumn("TalentName", $name);
         $stmt->bindcolumn("Description", $description);
         $stmt->bindcolumn("TalentID", $talent);
         $stmt -> execute();

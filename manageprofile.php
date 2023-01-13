@@ -52,7 +52,7 @@
                     if(isset($dbHandler)){
                         $stmt = $dbHandler->prepare("SELECT * FROM `Talentprofile`");
                         $stmt->bindColumn("TalentID", $id, PDO::PARAM_INT);
-                        $stmt->bindColumn("Name", $name, PDO::PARAM_STR);
+                        $stmt->bindColumn("TalentName", $name, PDO::PARAM_STR);
                         $stmt->bindColumn("Country", $country, PDO::PARAM_STR);
                         $stmt->bindColumn("Phone", $phone, PDO::PARAM_STR);
                         $stmt->bindColumn("Email", $email, PDO::PARAM_STR);
