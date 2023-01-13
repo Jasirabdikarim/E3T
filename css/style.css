@@ -73,6 +73,8 @@ main {
     background: white;
     border-collapse: collapse;
     margin-bottom: 1%;
+    width: 98%;
+    margin-left: 1%;
 }
 
 #agenda td, th {
@@ -121,6 +123,7 @@ footer {
     display: flex;
     background-color: rgba(231, 231, 231, 1);
     height: 170px;
+    margin-top: auto;
 }
 
 footer ul {
