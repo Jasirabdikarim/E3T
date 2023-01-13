@@ -146,7 +146,7 @@ footer {
     height: 20%;
 }
 
-#submit {
+.submit {
     background-color: rgba(123, 61, 244, 1);
     width: 60%;
     height: 20%;
@@ -155,6 +155,8 @@ footer {
     border:rgba(123, 61, 244, 1);
     margin-left: 20%;
     margin-top: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 #accountMenu {
@@ -289,4 +291,93 @@ footer {
     cursor: pointer;
 }
 
+#registrationForm{
+    grid-column: 2/4;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#registrationForm h1{
+    text-align: center;
+}
+
+.inputField{
+    width: 100%;
+}
+
+.formFieldSpacing{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    color: red;
+    text-align: center;
+}
+
+.succes{
+    color: rgb(110, 187, 110);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.succes a{
+    color: rgb(110, 187, 110);
+    text-align: center;
+}
+
+#manageLayout{
+    grid-column: 2/4;
+}
+
+#manageLayout h1{
+    text-align: center;
+}
+
+#manageTable{
+    width: 100%;
+    text-align: center;
+}
+
+.tablePadding{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+/* talenten */
+#searchform{
+  display: grid;
+  grid-column: 2/4;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+#search{
+  border: 1px solid grey;
+  padding: 2%;
+  margin-top: 10%;
+  align-items: center;
+  width: 96%;
+}
+#result{
+  grid-column: 2/4;
+  text-align: center;
+}
+
+.purplebar{
+	grid-column: 2/4;
+    border-top-style: solid;
+    border-top-width: 2em;
+    border-top-color: rgba(123, 61, 244, 1);
+}
+
+.talentprofile{
+	display: flex;
+	grid-column: 2/4;
+	flex-direction: row;
+	align-items: center;
+}
 

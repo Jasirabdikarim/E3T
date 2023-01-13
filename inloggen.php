@@ -77,7 +77,7 @@
                         <p><input type="text" name="user" id="user" required></p>
                         <p><label for="password">Wachtwoord</label></p>
                         <p><input type="password" name="password" id="password" required></p>
-                        <p><input type="submit" name="submit" value="Aanmelden" id="submit"></p>
+                        <p><input type="submit" name="submit" value="Aanmelden" class="submit"></p>
                     </form>
                     <?php
                         if(isset($error)){

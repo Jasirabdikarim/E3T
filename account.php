@@ -31,7 +31,8 @@
                     <ul>
                         <?php
                             if($_SESSION['Role'] == "admin"){
-                                echo "<li><a href='#'>Account aanmaken</a></li>";
+                                echo "<li><a href='registeraccount.php'>Account aanmaken</a></li>";
+                                echo "<li><a href='manageaccounts.php'>Accounts beheren</a></li>";
                             }
                         ?>
                     </ul>
