@@ -8,9 +8,12 @@
   catch (Exception $ex){
     echo $ex;
   }
+  $date = date("Y-m-d");
   if(isset($dbHandler)) {
     try {
-      $stmt = $dbHandler->prepare("SELECT * FROM Event");
+      
+      $stmt = $dbHandler->prepare("SELECT * FROM Event WHERE Date >= :date ORDER BY date");
+      $stmt->bindParam("date", $date, PDO::PARAM_STR);
       $stmt->execute();
     } catch (Exception $ex) {
       echo $ex;
@@ -29,7 +32,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/temp.css">
     <title>E3T</title>
   </head>
   <body>
