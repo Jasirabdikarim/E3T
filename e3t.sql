@@ -53,9 +53,6 @@ CREATE TABLE `Customer` (
 -- Gegevens worden geëxporteerd voor tabel `Customer`
 --
 
-INSERT INTO `Customer` (`CustomerID`, `Name`, `City`, `Phone`, `Email`) VALUES
-(1, 'Customer', 'Emmen', '06', 'Customer');
-
 -- --------------------------------------------------------
 
 --
@@ -115,9 +112,6 @@ CREATE TABLE `Login` (
 -- Gegevens worden geëxporteerd voor tabel `Login`
 --
 
-INSERT INTO `Login` (`LoginID`, `TalentID`, `Username`, `Password`, `Role`) VALUES
-(2, NULL, 'admin', '$2y$10$oHVWs4OhS8ojT.H8swlOLuQsMyBfSRz.xWwE6/zxYEY/d6Rgnbi2i', 'admin');
-
 -- --------------------------------------------------------
 
 --
@@ -137,10 +131,6 @@ CREATE TABLE `Talentprofile` (
 --
 -- Gegevens worden geëxporteerd voor tabel `Talentprofile`
 --
-
-INSERT INTO `Talentprofile` (`LoginID`, `TalentID`, `TalentName`, `Country`, `Phone`, `Email`, `Description`) VALUES
-(2, 2, 'Talent', 'Emmen', '06', 'talent', 'Talent'),
-(2, 3, 'Talent', 'NL', '06', 'Talent', 'Talent');
 
 --
 -- Indexen voor geëxporteerde tabellen
