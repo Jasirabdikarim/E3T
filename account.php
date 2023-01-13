@@ -64,6 +64,7 @@
                                 }
                             }
                         ?>
+                        <li><a href='logout.php'>Log uit</a></li>
                     </ul>
                 </div>
             </main>
