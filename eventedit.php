@@ -81,7 +81,7 @@ if (isset($dbHandler)) {
 <body>
 <header>
     <div id="headerContent">
-        <h2>E3T</h2>
+        <h2><a href="index.php">E3T</a></h2>
     </div>
     <nav>
         <a href="talenten.php">Talenten</a>
@@ -165,5 +165,34 @@ if (isset($dbHandler)) {
         <p>Privacy Policy l Algemene voorwaarden l Disclaimer l Cookies</p>
     </div>
 </main>
+<footer>
+        <div id="item1">
+          <h3>Informatie</h3>
+          <ul>
+            <li>Veelgestelde Vragen</li>
+            <li>Over Ons</li>
+            <li>Vacetures</li>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>Recenties</li>
+          </ul>
+        </div>
+        <div id="item2">
+          <h3>Contact</h3>
+          <ul>
+            <li>Straatnaam 1</li>
+            <li>1234PV</li>
+            <li>06-12345678</li>
+            <li>support@E3T.com</li>
+          </ul>
+        </div>
+        <div id="item3">
+          <h3>Social Media</h3>
+          <img src="img/logos.png" alt="social media logos">
+        </div>
+      </footer>
+      <div id="subfooter";>
+        <p>Privacy Policy  l  Algemene voorwaarden  l  Disclaimer  l  Cookies</p>
+      </div>
 </body>
 </html>

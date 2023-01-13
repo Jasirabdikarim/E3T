@@ -23,7 +23,7 @@
     <body>
         <header>
             <div id="headerContent">
-                <h2>E3T</h2>
+                <h2><a href="index.php">E3T</a></h2>
             </div>
             <nav>
                 <a href="talenten.php">Talenten</a>

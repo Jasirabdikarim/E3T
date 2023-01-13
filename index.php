@@ -37,7 +37,7 @@
   <body>
     <header>
       <div id="headerContent">
-      <h2>E3T</h2>
+      <h2><a href="index.php">E3T</a></h2>
       </div>
       <nav>
         <a href="talenten.php">Talenten</a>
@@ -67,7 +67,7 @@
                   if ($count > 0):
                     ?>
                     <tr>
-                      <td><?php echo $row['Name'];?></td>
+                      <td><?php echo $row['EventName'];?></td>
                       <td><?php echo $row['Location'];?></td>
                       <td><?php echo $row['Date'];?></td>
                     </tr>
