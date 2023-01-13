@@ -29,7 +29,7 @@ if (isset($dbHandler)) {
     }
     $err = [];
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $statement = $dbHandler->prepare("UPDATE Event SET CustomerID = :CustomerID, EventName = :EventName, Location = :Location, Price = :Price, Date = :Date, Description = :Description;");
+        $statement = $dbHandler->prepare("UPDATE Event SET CustomerID = :CustomerID, EventName = :EventName, Location = :Location, Price = :Price, Date = :Date, Description = :Description WHERE EventID = :EventID;");
 
         if (!$CustomerID = filter_input(INPUT_POST, 'CustomerID', FILTER_VALIDATE_INT)) {
             $err[] = "Vergeten het klant ID toe te voegen";
@@ -56,6 +56,7 @@ if (isset($dbHandler)) {
             $statement->bindParam("Price", $Price, PDO::PARAM_STR);
             $statement->bindParam("Date", $Date, PDO::PARAM_STR);
             $statement->bindParam("Description", $Description, PDO::PARAM_STR);
+            $statement->bindParam("EventID", $_GET['id'], PDO::PARAM_STR);
             try {
                 $statement->execute();
             } catch (Exception $ex) {
@@ -97,7 +98,7 @@ if (isset($dbHandler)) {
     <div id="addcontainer">
         <h1>Evenement Bewerken </h1>
         <div id="overrulebox">
-            <form name="eventadd" action="<?= filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_SPECIAL_CHARS); ?>"
+            <form name="eventedit" action="eventedit.php?id=<?php echo $_GET['id']; ?>"
                   method="POST">
                 <?php
                 while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -129,6 +130,7 @@ if (isset($dbHandler)) {
                     ";
                 }
                 ?>
+                <input type="hidden" name="eventID" value="$_GET['id']">
                 <input type="submit" value="Verzenden">
             </form>
             <?php
