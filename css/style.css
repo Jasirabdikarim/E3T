@@ -64,20 +64,43 @@ main {
 #agenda {
     grid-column: 1/3;
     background-color: rgba(217, 217, 217, 1);
-    border-top: thick solid rgba(123, 61, 244, 1);
+    border-top: 2em solid rgba(123, 61, 244, 1);
     border-right-style: solid;
     border-right-color: black;
 }
 
 #agenda table {
-    background-color: white;
+    background: white;
+    border-collapse: collapse;
+    margin-bottom: 1%;
     width: 98%;
     margin-left: 1%;
 }
 
+#agenda td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#agenda p {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 7.5%;
+    color: red;
+}
+
+
 #agenda table, td {
     border: 1px solid black;
-  }
+}
+
+#agenda h2 {
+    text-align: center;
+}
 
 #info2 {
     display: flex;
@@ -90,8 +113,9 @@ main {
 
 #info2 p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25em;
     text-align: center;
+    margin-top: 5%;
 }
 
 footer {
@@ -99,6 +123,38 @@ footer {
     display: flex;
     background-color: rgba(231, 231, 231, 1);
     height: 170px;
+    margin-top: auto;
+}
+
+footer ul {
+    list-style: none;
+    text-align: center;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+#item3 img {
+    width: auto;
+    height: 45%;
+    margin-left: 10%;
+}
+
+#item1 {
+    margin-left: 31%;
+}
+
+#item1 h3 {
+    margin-left: 25%;
+}
+
+#item2 h3 {
+    margin-left: 25%;
+}
+
+#item3 {
+    margin-left: 3%;
 }
 
 #subfooter {
