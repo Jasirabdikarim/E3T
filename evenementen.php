@@ -7,12 +7,10 @@ try {
 } catch (Exception $ex) {
     $error = "Er is een fout bij het maken van verbinding met de database";
 }
-
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $search = filter_input(INPUT_GET, "search", FILTER_SANITIZE_SPECIAL_CHARS);
     if (isset($search)) {
         try {
-
             $stmt = $dbHandler->prepare("SELECT Event.EventID, EventName, Date, GROUP_CONCAT(TalentName SEPARATOR ', ') as TalentName, Location, Price, Event.Description 
                                                     FROM Event
                                                     JOIN eventOccasion ON Event.EventID = eventOccasion.EventID
@@ -88,6 +86,7 @@ $dbHandler = null;
                     <?php
                     if (isset($_SESSION['Role'])) {
                         if ($_SESSION['Role'] == "admin") {
+                            echo "<th>Evenement bewerken</th>";
                             echo "<th>Verwijderen</th>";
                         }
                     }
@@ -104,6 +103,7 @@ $dbHandler = null;
                     echo "<td>$result[Description]</td>";
                     if (isset($_SESSION['Role'])) {
                         if ($_SESSION['Role'] == "admin") {
+                            echo "<td><a href='eventedit.php?id=$result[EventID]'>Bewerken</a></td>";
                             echo "<td><a href='eventdelete.php?id=$result[EventID]'>Verwijderen</a></td>";
                         }
                     }
