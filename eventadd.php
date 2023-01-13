@@ -25,19 +25,19 @@ if (isset($dbHandler)) {
             $err[] = "Vergeten het klant ID toe te voegen";
         }
         if (!$EventName = filter_input(INPUT_POST, 'EventName', FILTER_SANITIZE_SPECIAL_CHARS)) {
-            $err[] = "";
+            $err[] = "Vergeten de naam van het evenement toe te voegen";
         }
         if (!$Location = filter_input(INPUT_POST, 'Location', FILTER_SANITIZE_SPECIAL_CHARS)) {
-            $err[] = "";
+            $err[] = "Vergeten locatie toe te voegen aan evenement";
         }
         if (!$Price = filter_input(INPUT_POST, 'Price', FILTER_VALIDATE_INT)) {
-            $err[] = "";
+            $err[] = "Vergeten de prijs toe te voegen";
         }
         if (!$Date = filter_input(INPUT_POST, 'Date', FILTER_SANITIZE_SPECIAL_CHARS)) {
-            $err[] = "";
+            $err[] = "Vergeten de datum van het evenement in te voeren";
         }
         if (!$Description = filter_input(INPUT_POST, 'Description', FILTER_SANITIZE_SPECIAL_CHARS)) {
-            $err[] = "";
+            $err[] = "Geen beschrijving van het evenement toegevoegd";
         }
 
         $statement->bindParam("CustomerID", $CustomerID, PDO::PARAM_STR);
@@ -101,7 +101,7 @@ $dbHandler = null;
                 </div>
                 <div>
                     <label for="Date">Datum</label>
-                    <input type="text" name="Date">
+                    <input type="date" name="Date">
                 </div>
                 <div>
                     <label for="CustomerID">Klant ID</label>
@@ -130,8 +130,16 @@ $dbHandler = null;
                 </table>
             </div>
         </div>
+        <?php
+            if (count($err) > 0) {
+            echo "<ul>";
+                foreach ($err as $error) {
+                    echo "<li>$error</li>";
+                }
+                    echo "</ul>";
+            }
+        ?>
     </div>
-
     <div id="subfooter">
         <p>Privacy Policy l Algemene voorwaarden l Disclaimer l Cookies</p>
     </div>

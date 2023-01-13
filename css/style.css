@@ -157,7 +157,7 @@ footer {
     margin-top: 5%;
 }
 
-#accountMenu{
+#accountMenu {
     grid-column: 2/4;
     margin: auto;
     display: flex;
@@ -165,46 +165,46 @@ footer {
     flex-direction: column;
 }
 
-#accountMenu ul{
+#accountMenu ul {
     list-style-type: none;
     margin: auto;
     padding: 0;
 }
 
-#eventstitle{
+#eventstitle {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-size:4em;
+    font-size: 4em;
     grid-column: 1/5;
     background-color: white;
 }
 
-#purplebarwidth{
+#purplebarwidth {
 	grid-column: 1/5;
     border-top-style: solid;
     border-top-width: 2em;
     border-top-color: rgba(123, 61, 244, 1);
 }
 
-#upcoming{
+#upcoming {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-size:1em;
+    font-size: 1em;
     grid-column: 1/5;
     background-color: rgba(217, 217, 217, 1);
     margin-bottom: 2%;
 }
 
-#upcoming > h1{
+#upcoming > h1 {
     margin-bottom: 0;
 }
 
-#search{
+#search {
     border: 1px solid grey;
     padding: 2%;
     margin-top: 10%;
@@ -212,7 +212,7 @@ footer {
     width: 96%;
 }
 
-#background{ 
+#background { 
     background-color: rgba(217, 217, 217, 1);
     grid-column: 1/5;
 } 
@@ -243,7 +243,7 @@ footer {
 #addcontainer, #linkcontainer {
     align-items: center;
     text-align: center;
-    font-size:1em;
+    font-size: 1em;
     grid-column: 1/5;
     background-color: rgba(217, 217, 217, 1);
 }

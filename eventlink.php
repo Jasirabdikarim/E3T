@@ -25,7 +25,6 @@ if (isset($dbHandler)) {
         $error = "Kan geen events vinden";
     }
 
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $dbHandler->prepare("INSERT INTO eventOccasion (TalentID, EventID) VALUES (:TalentID, :EventID)");
         if (!$TalentID = filter_input(INPUT_POST, 'TalentID', FILTER_VALIDATE_INT)) {
@@ -45,6 +44,9 @@ if (isset($dbHandler)) {
         }
         if (count($err) == 0) {
             $success = "Talent is succesvol gelinkt aan het evenement";
+        }
+        else {
+            echo $err;
         }
     }
 }
@@ -76,7 +78,6 @@ $dbHandler = null;
         <h1> Evenementen </h1>
     </div>
     <div id="purplebarwidth"></div>
-
     <div id="linkcontainer">
         <h1>Talent toevoegen aan evenement</h1>
         <?php
@@ -130,7 +131,6 @@ $dbHandler = null;
             </div>
         </div>
     </div>
-
     <div id="subfooter">
         <p>Privacy Policy l Algemene voorwaarden l Disclaimer l Cookies</p>
     </div>
