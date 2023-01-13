@@ -64,20 +64,43 @@ main {
 #agenda {
     grid-column: 1/3;
     background-color: rgba(217, 217, 217, 1);
-    border-top: thick solid rgba(123, 61, 244, 1);
+    border-top: 2em solid rgba(123, 61, 244, 1);
     border-right-style: solid;
     border-right-color: black;
 }
 
 #agenda table {
-    background-color: white;
+    background: white;
+    border-collapse: collapse;
+    margin-bottom: 1%;
     width: 98%;
     margin-left: 1%;
 }
 
+#agenda td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#agenda p {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 7.5%;
+    color: red;
+}
+
+
 #agenda table, td {
     border: 1px solid black;
-  }
+}
+
+#agenda h2 {
+    text-align: center;
+}
 
 #info2 {
     display: flex;
@@ -90,8 +113,9 @@ main {
 
 #info2 p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25em;
     text-align: center;
+    margin-top: 5%;
 }
 
 footer {
@@ -99,6 +123,38 @@ footer {
     display: flex;
     background-color: rgba(231, 231, 231, 1);
     height: 170px;
+    margin-top: auto;
+}
+
+footer ul {
+    list-style: none;
+    text-align: center;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+#item3 img {
+    width: auto;
+    height: 45%;
+    margin-left: 10%;
+}
+
+#item1 {
+    margin-left: 31%;
+}
+
+#item1 h3 {
+    margin-left: 25%;
+}
+
+#item2 h3 {
+    margin-left: 25%;
+}
+
+#item3 {
+    margin-left: 3%;
 }
 
 #subfooter {
@@ -132,7 +188,6 @@ footer {
     font-weight: bold;
 }
 
-
 #user {
     width: 100%;
     background-color: rgba(241, 241, 241, 1);
@@ -160,7 +215,7 @@ footer {
     padding-bottom: 1%;
 }
 
-#accountMenu{
+#accountMenu {
     grid-column: 2/4;
     margin: auto;
     display: flex;
@@ -168,10 +223,135 @@ footer {
     flex-direction: column;
 }
 
-#accountMenu ul{
+#accountMenu ul {
     list-style-type: none;
     margin: auto;
     padding: 0;
+}
+
+#eventstitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 4em;
+    grid-column: 1/5;
+    background-color: white;
+}
+
+#purplebarwidth {
+	grid-column: 1/5;
+    border-top-style: solid;
+    border-top-width: 2em;
+    border-top-color: rgba(123, 61, 244, 1);
+}
+
+#upcoming {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1em;
+    grid-column: 1/5;
+    background-color: rgba(217, 217, 217, 1);
+    margin-bottom: 2%;
+}
+
+#upcoming > h1 {
+    margin-bottom: 0;
+}
+
+#search {
+    border: 1px solid grey;
+    padding: 2%;
+    margin-top: 10%;
+    align-items: center;
+    width: 96%;
+}
+
+#background { 
+    background-color: rgba(217, 217, 217, 1);
+    grid-column: 1/5;
+} 
+
+#searchform {
+    padding: 2%;
+    align-items: center;
+    width: 75%;
+    margin: 0;
+}
+
+#agenda2 table {
+    background: white;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 5% 2% 5%;
+    table-layout: fixed;
+}
+
+#agenda2 td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#addcontainer, #linkcontainer {
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    grid-column: 1/5;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+#overrulebox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#box td, th {
+    border-bottom: 1px solid rgba(217, 217, 217, 1);
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0.625em;
+    text-align: left;
+}
+
+#box table {
+    background: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 5% 2% 5%;
+}
+
+#overrulebox [type=text], textarea, [type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#overrulebox input[type=submit] {
+    width: 100%;
+    background-color: rgba(123, 61, 244, 1);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#eventsearch {
+    padding: 2%;
+    align-items: center;
+    width: 75%;
+    margin: 0;
 }
 
 #registrationForm{
@@ -282,3 +462,4 @@ footer {
 #editform input{
 	margin: 2%;
 }
+
