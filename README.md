@@ -13,5 +13,6 @@ This project contains the files needed to run the webapplication made for E3T.
 The following steps are required to make the webapplication accessible.
 
 - Download all necessary files.
+- Change constants.php.dist to constants.php and fill in the required constants.
 - Import the .sql-file on the databaseserver.
 - The .php-files, .css-files and images need to be imported on the webserver. 
