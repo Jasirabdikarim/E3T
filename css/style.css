@@ -19,6 +19,11 @@ header {
     align-items: center;
     margin-left: 5%;
 }
+#headerContent > h2 > a  {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
 nav {
     display: flex;
