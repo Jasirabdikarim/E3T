@@ -30,8 +30,8 @@ if (isset($dbHandler)) {
         if (!$Location = filter_input(INPUT_POST, 'Location', FILTER_SANITIZE_SPECIAL_CHARS)) {
             $err[] = "Vergeten locatie toe te voegen aan evenement";
         }
-        if (!$Price = filter_input(INPUT_POST, 'Price', FILTER_VALIDATE_INT)) {
-            $err[] = "Vergeten de prijs toe te voegen";
+        if (!$Price = filter_input(INPUT_POST, 'Price', FILTER_VALIDATE_FLOAT)) {
+            $err[] = "Prijs mag alleen bestaan uit cijfers";
         }
         if (!$Date = filter_input(INPUT_POST, 'Date', FILTER_SANITIZE_SPECIAL_CHARS)) {
             $err[] = "Vergeten de datum van het evenement in te voeren";
@@ -39,17 +39,21 @@ if (isset($dbHandler)) {
         if (!$Description = filter_input(INPUT_POST, 'Description', FILTER_SANITIZE_SPECIAL_CHARS)) {
             $err[] = "Geen beschrijving van het evenement toegevoegd";
         }
-
-        $statement->bindParam("CustomerID", $CustomerID, PDO::PARAM_STR);
-        $statement->bindParam("EventName", $EventName, PDO::PARAM_STR);
-        $statement->bindParam("Location", $Location, PDO::PARAM_STR);
-        $statement->bindParam("Price", $Price, PDO::PARAM_STR);
-        $statement->bindParam("Date", $Date, PDO::PARAM_STR);
-        $statement->bindParam("Description", $Description, PDO::PARAM_STR);
-        try {
-            $statement->execute();
-        } catch (Exception $ex) {
-            echo $ex;
+        if (count($err) == 0) {
+            $statement->bindParam("CustomerID", $CustomerID, PDO::PARAM_STR);
+            $statement->bindParam("EventName", $EventName, PDO::PARAM_STR);
+            $statement->bindParam("Location", $Location, PDO::PARAM_STR);
+            $statement->bindParam("Price", $Price, PDO::PARAM_STR);
+            $statement->bindParam("Date", $Date, PDO::PARAM_STR);
+            $statement->bindParam("Description", $Description, PDO::PARAM_STR);
+            try {
+                $statement->execute();
+            } catch (Exception $ex) {
+                echo $ex;
+            }
+        }
+        if (count($err) == 0) {
+            $success = "Evenement is succesvol toegevoegd";
         }
     }
 }
@@ -101,7 +105,7 @@ $dbHandler = null;
                 </div>
                 <div>
                     <label for="Date">Datum</label>
-                    <input type="date" name="Date">
+                    <input type="date" name="Date" required>
                 </div>
                 <div>
                     <label for="CustomerID">Klant ID</label>
@@ -113,6 +117,19 @@ $dbHandler = null;
                 </div>
                 <input type="submit" value="Verzenden">
             </form>
+            <?php
+            if (isset($success)) {
+                echo "<p>$success</p>";
+            }
+
+            if (count($err) > 0) {
+                echo "<ul>";
+                foreach ($err as $error) {
+                    echo "<li>$error</li>";
+                }
+                echo "</ul>";
+            }
+            ?>
             <div id="box">
                 <table>
                     <tr>
@@ -130,15 +147,6 @@ $dbHandler = null;
                 </table>
             </div>
         </div>
-        <?php
-            if (count($err) > 0) {
-            echo "<ul>";
-                foreach ($err as $error) {
-                    echo "<li>$error</li>";
-                }
-                    echo "</ul>";
-            }
-        ?>
     </div>
     <div id="subfooter">
         <p>Privacy Policy l Algemene voorwaarden l Disclaimer l Cookies</p>
