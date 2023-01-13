@@ -58,6 +58,7 @@
                                         $stmt->fetch(PDO::FETCH_ASSOC);
                                         if(isset($talentID)){
                                             echo "<li><a href='profile.php?id=$talentID'>Eigen profiel</a></li>";
+                                            echo "<li><a href='editownprofile.php'>Profiel bewerken</a></li>";
                                         }
                                     }
                                 }
