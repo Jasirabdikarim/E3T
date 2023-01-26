@@ -15,7 +15,7 @@ The following steps are required to make the webapplication accessible.
 - Download all necessary files.
 - Change constants.php.dist to constants.php and fill in the required constants. These required constants being the databasehost, databasename, databaseuser and databasepassword.
 
-```json
+```
     <?php
         $dbhost = "// Insert the databasehost here";
         $dbname = "// Insert the databasename here";
@@ -48,7 +48,7 @@ For installing the Docker environment we refer to [Docker environment for NHL St
 - Open Cmder and go to the correct directory using the `cd` command, which is a folder called `app/public` if the link above has been used.
 - Clone the respository using Git into the Docker environment.
 
-```json
+```
 git clone [SSH-link]
 ```
 
